@@ -6,7 +6,7 @@
 
 This is a project for CE103.
 
-* `/pcb/`: Schematic and PCB, built with Altium Designer
+<!-- * `/pcb/`: Schematic and PCB, built with Altium Designer -->
 * `/simulation/`: Circuit simulation with Proteus
 * `/src/`: Source code of the LED MATRIX 8X8 firmware
 
