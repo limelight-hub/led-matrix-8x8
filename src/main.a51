@@ -4,7 +4,6 @@
       ljmp  chgMode
       org   13h
       ljmp  chgSpeed
-      ;org   0Bh
       
 ;;;register value
 ;r0 : mode
@@ -99,8 +98,8 @@ DelayButton:
       mov P2, #0ffh
       clr TR0
       clr TF0
+      MOV TH0, #00H 
       MOV TL0, #04CH  ; 
-      MOV TH0, #00H   
       SETB TR0       
    Delay_Debounce:
       JNB TF0,Delay_Debounce 
@@ -117,7 +116,7 @@ chgSpeed:;thay doi so lan quet 1 byte led
       CJNE A, #-5, nextSpeed
       mov A, #35
       nextSpeed:
-      mov R2, A
+      mov R2, A   
       mov R3, #1
       endISR1:
       mov A, #0
@@ -382,32 +381,32 @@ mode0:;nhap nhay
       ret
   IuUIT:
       mov dptr, #codeIuUIT 
-      lcall scan
+      LCALL SCAN
       ret
   
   ZoomOut:
       mov dptr, #codeZoomOut 
-      lcall scan
+      LCALL SCAN
       ret
   CE:
       mov dptr, #codeCE
-      lcall scan
+      LCALL SCAN
       ret
   FireWork:
       mov dptr, #codeFireWork
-      lcall scan
+      LCALL SCAN
       ret
   Bird:
       mov dptr, #codeBird 
-      lcall scan
+      LCALL SCAN
       ret
   Ball:
       mov dptr, #codeBall
-      lcall scan
+      LCALL SCAN
       ret
   PinWheel:
       mov dptr, #codePinWheel
-      lcall scan
+      LCALL SCAN
       ret
    Nhom17:	
       mov R5, #8
